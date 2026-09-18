@@ -1,0 +1,33 @@
+{
+  "name": "gh-streak",
+  "version": "1.0.0",
+  "description": "Track your GitHub contribution streak from public data only — no auth, no keys.",
+  "type": "commonjs",
+  "bin": {
+    "gh-streak": "bin/gh-streak.js"
+  },
+  "main": "lib/streak.js",
+  "files": [
+    "bin/",
+    "lib/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/streak.test.js",
+    "start": "node bin/gh-streak.js hdsm55"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "github",
+    "streak",
+    "contributions",
+    "cli",
+    "habit",
+    "productivity"
+  ],
+  "author": "hdsm55",
+  "license": "MIT"
+}
