@@ -17,6 +17,8 @@ function parseArgs(argv) {
     if (a === '--json') args.json = true;
     else if (a === '--no-color') args.color = false;
     else if (a === '--days') args.days = parseInt(argv[++i], 10) || 30;
+    else if (a === '--since') args.since = argv[++i];
+    else if (a === '--until') args.until = argv[++i];
     else if (a === '-h' || a === '--help') { printHelp(); process.exit(0); }
     else if (!a.startsWith('-')) args.user = a;
   }
@@ -31,6 +33,8 @@ USAGE
 
 OPTIONS
   --days N     calendar window (default 30)
+  --since ISO  only count events on/after this date (e.g. 2026-01-01)
+  --until ISO  only count events on/before this date
   --json       machine-readable JSON output
   --no-color   disable terminal colours
   -h, --help   show this help
@@ -47,7 +51,7 @@ async function main() {
     process.exit(1);
   }
   try {
-    const data = await fetchPublicData(BASE, UA, args.user, args.days);
+    const data = await fetchPublicData(BASE, UA, args.user, args.days, args.since, args.until);
     if (args.json) {
       console.log(JSON.stringify({
         user: args.user,

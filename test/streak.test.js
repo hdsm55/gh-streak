@@ -18,6 +18,16 @@ test('contiguous recent days => current streak counts', () => {
   assert.ok(r.currentStreak >= 2, `expected >=2 got ${r.currentStreak}`);
 });
 
+test('date-window filter drops older contributions (applied upstream)', () => {
+  // Simulates --since=2030-01-01: only events at/after that date count.
+  const sinceT = Date.parse('2030-01-01');
+  const inWindow = ['2030-02-01T10:00:00Z', '2030-02-02T10:00:00Z']
+    .filter((s) => Date.parse(s) >= sinceT);
+  const r = computeStreak(inWindow);
+  assert.strictEqual(r.contributionDays, 2, 'both in-window days counted');
+  assert.strictEqual(r.longestStreak, 2);
+});
+
 test('longest streak spans window regardless of recency', () => {
   // 5 consecutive days ending 10 days ago.
   const base = new Date();
