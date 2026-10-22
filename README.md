@@ -1,5 +1,9 @@
 # gh-streak 🔥
 
+[![CI](https://github.com/hdsm55/gh-streak/actions/workflows/ci.yml/badge.svg)](https://github.com/hdsm55/gh-streak/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen)](./package.json)
+
 `gh-streak` — أداة CLI صغيرة تتعقّب **سلسلة إسهاماتك** على GitHub (streak) من البيانات العامة فقط، بلا أي مفاتيح ولا أسرار.
 
 ترسم **سلسلة الأيام** ومعدلك، وتخبرك هل مازلت **متصلاً** أو **انقطع** سلسلتك — مع تلميح لطيف.
@@ -90,7 +94,7 @@ node bin/gh-streak.js hdsm55
 
 ## 🤝 المساهمة
 
-نرحّب بالـ PRs! أضف دعماً لـ `--since`/`--until`، رسوم أشكال أخرى، أو واجهات (Go/Rust/Python). انظر `CONTRIBUTING.md`.
+نرحّب بالـ PRs! انظر [CONTRIBUTING.md](./CONTRIBUTING.md) — نطوّر معاً (CI على Node 18/20/22).
 
 ---
 
