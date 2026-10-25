@@ -1,107 +1,61 @@
-# gh-streak 🔥
+<div align="center">
 
-[![CI](https://github.com/hdsm55/gh-streak/actions/workflows/ci.yml/badge.svg)](https://github.com/hdsm55/gh-streak/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen)](./package.json)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/brand-hero-dark.svg" />
+  <img src="assets/brand-hero-light.svg" width="100%" alt="gh-streak" />
+</picture>
 
-`gh-streak` — أداة CLI صغيرة تتعقّب **سلسلة إسهاماتك** على GitHub (streak) من البيانات العامة فقط، بلا أي مفاتيح ولا أسرار.
+![Node.js](https://img.shields.io/badge/Node.js-%3E%3D18-339933?logo=node.js&logoColor=white&style=flat-square)
+![Zero deps](https://img.shields.io/badge/Zero deps-true-10b981?style=flat-square)
+![CI](https://img.shields.io/badge/CI-18/20/22-2088FF?logo=githubactions&logoColor=white&style=flat-square)
+![MIT](https://img.shields.io/badge/MIT-license-yellow?style=flat-square)
 
-ترسم **سلسلة الأيام** ومعدلك، وتخبرك هل مازلت **متصلاً** أو **انقطع** سلسلتك — مع تلميح لطيف.
-
-> أداة تخدم المطور الذي يريد الحفاظ على عادة إسهام يومية — GitHub streak — دون تسجيل الدخول ولا رفع رموز.
-
----
-
-## ✨ الميزات
-
-- 📅 **سلسلة الأيام الحالية** (current streak) والطويلة (longest streak)
-- 🔥 حالة الاتصال: متصل/خطر الانقطاع/انقطع
-- 🧮 ملخص إحصائيات العام: نجمات، فروع، إصدارات، PRs
-- 📴 **يعمل بلا أي مصادقة** — يقرأ `X-GitHub-Api-Version` وبيانات عامة فقط
-- ⚡ سكربت واحد في Node، لا تبعيات خارجية
-- 🖥️ يدعم تلوين الطرفية (وتعطيله بعلامة `--no-color`)
+</div>
 
 ---
 
-## 📦 التثبيت
+## 💡 الفكرة
 
-```bash
-# عبر npx (لا تثبيت دائم)
-npx gh-streak hdsm55
-
-# أو عالمياً
-npm install -g gh-streak
-gh-streak hdsm55
-```
+الحفاظ على عادة إسهام يومية هو أقوى طريقة لبناء حضور تقني ثابت. **gh-streak** يرسم لك سلسلة أيامك في طرفية واحدة — بلا تسجيل دخول ولا مفاتيح.
 
 ---
 
-## 🚀 الاستخدام
+## ✨ المزايا
 
-```bash
-gh-streak hdsm55            # الأكثر تفصيلاً
-gh-streak hdsm55 --days 30  # سلسلة آخر 30 يوماً
-gh-streak hdsm55 --json     # مخرجات JSON للبرمجة
-gh-streak hdsm55 --no-color # بلا تلوين
-```
-
-### مثال مخرجات
-
-```
-🔒 حساب: hdsm55
-🟩 سلسلة الحالية : 14 يوماً
-🏆 أطول سلسلة   : 42 يوماً
-🔥 أنت متصل — استمر!
-
-📊 آخر 30 يوماً
-█████████░░░░░░░░░░░░░░░░░░░
-```
+- 📅 **السلسلة الحالية والطويلة**.
+- 🔥 **حالة الاتصال** — متصل أو منقطع.
+- 🧮 **إحصائيات عامة**.
+- 📴 **بلا مصادقة** — قراءة عامة فقط.
+- ⚡ **بلا اعتماديات** — Node فقط.
+- 🖥️ **تلوين طرفية** و`--no-color`.
 
 ---
 
-## ⚙️ كيف يعمل
+## 🚀 مزايا مستقبلية
 
-1. يقرأ بيانات المستخدم العامة من `api.github.com/users/{user}` و`/events` و`/repos`.
-2. يحسب السلسلة من تواريخ الأحداث العامة (commits, PRs, issues…).
-3. يرسم مخطط الأيام بالأحرف (مثل مربعات GitHub الخضراء).
-4. **لا يرسل ولا يخزّن أي شيء** — مخرجات محلية فقط.
-
-لا يحتاج `gh` auth ولا توكن. البيانات **عامة بالكامل**.
+- 📊 **رسم بياني أخضر** كامل.
+- 🌍 **واجهات Go/Rust**.
+- 🧪 **تغطية اختبار أوسع**.
+- ⚙️ **تحسين الأداء** للملفات الكبيرة.
 
 ---
 
-## 🗂️ البنية
+## 🧰 التقنيات
 
-```
-gh-streak/
-├── bin/gh-streak.js   # نقطة الدخول (executable)
-├── lib/streak.js      # منطق الحساب والرسم
-├── test/streak.test.js# اختبارات صغيرة
-└── package.json
-```
-
----
-
-## 🛠️ التطوير
-
-```bash
-npm install        # لا تبعيات تشغيل، فقط dev
-npm test           # يشغّل الاختبارات
-node bin/gh-streak.js hdsm55
-```
+| الطبقة | الأدوات |
+|:--|:--|
+| **التشغيل** | Node.js (بلا اعتماديات) |
+| **الاختبار** | node:test |
+| **CI** | GitHub Actions (18/20/22) |
+| **الترخيص** | MIT |
 
 ---
 
-## 🤝 المساهمة
+<div align="center">
 
-نرحّب بالـ PRs! انظر [CONTRIBUTING.md](./CONTRIBUTING.md) — نطوّر معاً (CI على Node 18/20/22).
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/brand-foot-dark.svg" />
+  <img src="assets/brand-foot-light.svg" width="100%" alt="footer" />
+</picture>
 
----
-
-## 📜 الترخيص
-
-MIT — انظر [LICENSE](./LICENSE).
-
----
-
-**اصنع عادة. لا تكسر السلسلة. 🔥**
+</div>

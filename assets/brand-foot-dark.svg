@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="120" viewBox="0 0 1180 120" role="img" aria-label="footer">
+  <defs>
+    <linearGradient id="fbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#141220"/>
+      <stop offset="100%" stop-color="#0e1a1c"/>
+    </linearGradient>
+    <linearGradient id="fl" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6d4aff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#0ea5e9" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1180" height="120" fill="url(#fbg)"/>
+  <path d="M0 30 C 200 8, 380 46, 580 28 S 920 4, 1180 24 L1180 0 L0 0 Z" fill="url(#fl)"/>
+  <g font-family="'Segoe UI',system-ui,sans-serif" text-anchor="middle">
+    <text x="590" y="78" font-size="14" fill="#8b949e" letter-spacing="0.6">اصنع عادة. لا تكسر السلسلة.</text>
+  </g>
+</svg>

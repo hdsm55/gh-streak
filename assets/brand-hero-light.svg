@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="250" viewBox="0 0 1180 250" role="img" aria-label="gh-streak">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#faf9ff"/>
+      <stop offset="55%" stop-color="#f2f7ff"/>
+      <stop offset="100%" stop-color="#f4fdfa"/>
+    </linearGradient>
+    <linearGradient id="w1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6d4aff" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0.20"/>
+    </linearGradient>
+    <linearGradient id="w2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.15"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6d4aff"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1180" height="250" fill="url(#bg)"/>
+  <path d="M0 188 C 180 164, 330 212, 520 190 S 840 152, 1180 182 L1180 250 L0 250 Z" fill="url(#w1)"/>
+  <path d="M0 212 C 210 190, 380 232, 580 212 S 920 184, 1180 208 L1180 250 L0 250 Z" fill="url(#w2)"/>
+  <g font-family="'Segoe UI',system-ui,-apple-system,sans-serif" text-anchor="middle">
+    <text x="590" y="96" font-size="46" font-weight="700" fill="#1f2328" letter-spacing="0.3">gh-streak</text>
+    <rect x="515" y="116" width="150" height="3.5" rx="1.75" fill="url(#acc)"/>
+    <text x="590" y="150" font-size="15" fill="#57606a" letter-spacing="0.4">تتبّع سلسلة إسهاماتك على GitHub من البيانات العامة فقط.</text>
+  </g>
+</svg>
