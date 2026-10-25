@@ -19,6 +19,7 @@ function parseArgs(argv) {
     else if (a === '--days') args.days = parseInt(argv[++i], 10) || 30;
     else if (a === '--since') args.since = argv[++i];
     else if (a === '--until') args.until = argv[++i];
+    else if (a === '--markdown') args.markdown = true;
     else if (a === '-h' || a === '--help') { printHelp(); process.exit(0); }
     else if (!a.startsWith('-')) args.user = a;
   }
@@ -35,6 +36,7 @@ OPTIONS
   --days N     calendar window (default 30)
   --since ISO  only count events on/after this date (e.g. 2026-01-01)
   --until ISO  only count events on/before this date
+  --markdown   emit a README-ready Markdown summary
   --json       machine-readable JSON output
   --no-color   disable terminal colours
   -h, --help   show this help
@@ -52,6 +54,23 @@ async function main() {
   }
   try {
     const data = await fetchPublicData(BASE, UA, args.user, args.days, args.since, args.until);
+    if (args.markdown) {
+      const streak = computeStreak(data.events);
+      console.log([
+        `### 🔥 ${data.login}'s contribution streak`,
+        '',
+        `| Metric | Value |`,
+        `|:--|--:|`,
+        `| Current streak | **${streak.currentStreak}** day(s) |`,
+        `| Longest streak | **${streak.longestStreak}** day(s) |`,
+        `| Active days observed | ${streak.contributionDays} |`,
+        `| Followers | ${data.followers} |`,
+        `| Public repos | ${data.public_repos} |`,
+        '',
+        `<sub>Generated with gh-streak</sub>`
+      ].join('\n'));
+      process.exit(0);
+    }
     if (args.json) {
       console.log(JSON.stringify({
         user: args.user,
