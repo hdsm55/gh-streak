@@ -40,6 +40,30 @@
 
 ---
 
+## 🚀 التشغيل
+
+```bash
+# بدون تثبيت
+npx gh-streak <username>
+
+# أو عالمياً
+npm i -g gh-streak
+gh-streak hdsm55
+
+# خيارات
+gh-streak hdsm55 --days 90      # نافذة التقويم
+gh-streak hdsm55 --since 2026-01-01 --until 2026-06-30
+gh-streak hdsm55 --json         # مخرجات للبرمجة
+gh-streak hdsm55 --no-color
+```
+
+## 🧪 التطوير
+
+```bash
+npm test      # node:test — 5 اختبارات
+node bin/gh-streak.js hdsm55
+```
+
 ## 🧰 التقنيات
 
 | الطبقة | الأدوات |

@@ -46,3 +46,11 @@ test('only contribution events counted (handled upstream, dedupe here)', () => {
   // Both map to the same day => contributionDays distinct 1.
   assert.strictEqual(r.contributionDays, 1);
 });
+
+test('markdown summary contains required rows', () => {
+  const { computeStreak } = require('../lib/streak.js');
+  const r = computeStreak(['2026-09-01T10:00:00Z']);
+  assert.strictEqual(r.contributionDays, 1);
+  const md = `| Current streak | **${r.currentStreak}** |`;
+  assert.match(md, /Current streak/);
+});
